@@ -29,7 +29,7 @@ I am inital going to work on an algorithm that minimizes the number of collision
 
 - __Part 5:__ Once all that is done, update `README.md` to reflect what classes do what and provide all the information a random fellow Computer Scienist will need to use my program as an API for whatever they do.
 
-- __Part 6:__ If time permits (looking at what task I took, it probally won't), create a GUI using JavaFX or something modern to make it easier to use my program.
+- __Part 6:__ If time permits (looking at what task I took, I probably won't), create a GUI using JavaFX or something modern to make it easier to use my program.
 
 ## The actual algorithm ##
 
