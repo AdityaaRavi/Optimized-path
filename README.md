@@ -15,7 +15,7 @@ I want to create a java program/API that takes in input from a text file about a
 I am inital going to work on an algorithm that optimize the number of collisions with a `tree` - represented by the character "#" in the `board`, but while I am at it, use OOP concepts to make changing the path finding algorithm, or the goal of the path finding algorithm, or really anything relvant as simple as creating a subclass and overloading a method.
 
 ## The entire program explained ##
-### There are 2 things to want I want to do here:
+### There are 6 things to want I want to do here:
 
 - __Part 1: Getting the board ready:__
   To be able to test the algorithm I end up making, I need to have sample inputs first. And since I am not a masochist, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic.
@@ -43,5 +43,9 @@ I am inital going to work on an algorithm that optimize the number of collisions
 ___Base cases:___
 
 1.  The first base case is the obvious one -- This case checks if we have reached the end of the `board`. This returns the `path_found` token (see return values section).
-2.  The second base case needs an explainer -- Because
+2.  The second base case needs an explainer -- as we are keeping track of `best_num_occur` and the `num_occur` of the current branch, it is quite easy to find out if the current path still has a chance of changing the `best_path`: If we are minimizing a variable, if the `num_occur` is larger than the `best_num_occur`, it is useless to continue with the current branch, as its outcome cannot change the `best_path` or the `best_num_occur` -- the vice versa applies if you are trying to minimize a variable. If the current branch is found to be dead based on this criteria, the `dead_path` token is returned (see the return values section).
+
+___Possible movements in the `board`:___
+
+
   
