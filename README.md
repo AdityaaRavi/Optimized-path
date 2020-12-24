@@ -12,7 +12,7 @@ In this repo, I try to create an algorithm that finds a path that minimizes/maxi
 
 I want to create a java program/API that takes in input from a text file about a `board` that can represent a maze/forest/what not; a starting position (`sx`,`sy`); and a parameter to minimize/maximize [I will refer to it as "optimize" from here on] (for example the number of collisions with a given object).
 
-I am inital going to work on an algorithm that optimize the number of collisions with a `tree` - represented by the character "#" in the `board`, but while I am at it, use OOP concepts to make changing the path finding algorithm, or the goal of the path finding algorithm, or really anything relvant as simple as creating a subclass and overloading a method.
+I am inital going to work on an algorithm that minimizes the number of collisions with a `tree` - represented by the character "#" in the `board`, but while I am at it, use OOP concepts to make changing the path finding algorithm, or the goal of the path finding algorithm, or really anything relvant as simple as creating a subclass and overloading a method.
 
 ## The entire program explained ##
 ### There are 6 things to want I want to do here:
@@ -21,7 +21,7 @@ I am inital going to work on an algorithm that optimize the number of collisions
   To be able to test the algorithm I end up making, I need to have sample inputs first. And since I am not a masochist, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic.
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm.
-  This class will be an abstract class, the possible movements that the algorithm is allowed to move might just vary quite wildly.
+  This class will be an abstract class, as the possible movements that the algorithm is allowed to move just might vary quite wildly.
 
 - __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm.
 
@@ -37,16 +37,20 @@ I am inital going to work on an algorithm that optimize the number of collisions
 
 - The algorithm is actually quite simple -- the whole algorithm is going to be in a single recursive method. Inside that method, we are going to have two base cases (see the section below) and a for loop that makes a recursive call -- one for every possible movement within the `board` (see its respective section). 
 - The `Algorithm` class will have a parameter to keep track of the number of occurances (`num_occur`) of the variable to optimize (see base case no. 2) and a parameter (`curr_path`) that keeps track of the path taken in your current branch. 
-- The class will also be two other parameters variables: `best_num_occur`, which stores the `num_occur` of the most optimized path found yet and `best_path` which is a ` ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dy` and `dx` took at each position respectively (see the section about `dx` and `dy` for more info).
+- The class will also be two other parameters variables: `best_num_occur`, which stores the `num_occur` of the most optimized path found yet and the `best_path` which is a ` ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dy` and `dx` took at each position respectively (see the section about sign convention for more info).
 - The method will also return different things based on if it had found a new and better path, or if it had terminated in the middle after having found that the current branch is a dead branch (see base case no. 2 and the return values section). 
 
 ___Base cases:___
 
 1.  The first base case is the obvious one -- This case checks if we have reached the end of the `board`. This returns the `path_found` token (see return values section) and then updates the `best_path` with `curr_path`.
-2.  The second base case needs an explainer -- as we are keeping track of `best_num_occur` and the `num_occur` of the current branch, it is quite easy to find out if the current path still has a chance of changing the `best_path`: If we are minimizing a variable, if the `num_occur` is larger than the `best_num_occur`, it is useless to continue with the current branch, as its outcome cannot change the `best_path` or the `best_num_occur` -- the vice versa applies if you are trying to minimize a variable. If the current branch is found to be dead based on this criteria, the `dead_path` token is returned (see the return values section).
+2.  The second base case needs an explainer -- as we are keeping track of `best_num_occur` and the `num_occur` of the current branch, it is quite easy to find out if the current path still has a chance of changing the `best_path`: If we are minimizing a variable, then if the `num_occur` is larger than the `best_num_occur`, it is useless to continue with the current branch, as its outcome cannot change the `best_path` or the `best_num_occur` -- the vice versa applies if you are trying to minimize a variable. If the current branch is found to be dead based on this criteria, the `dead_path` token is returned (see the return values section).
 
 ___Possible movements in the `board`:___
 
-There will be an abstract method in the data ingestion class described in "part 2" of the "Entire program explained" section whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can take. This method will be called once in the constructor of the `Algoritm` class and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter,
+There will be an abstract method in the data ingestion class described in "part 2" of the "Entire program explained" section whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can make. This method will be called once in the constructor of the `Algoritm` class and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter.
+
+___Possible Return values of the function:__
+
+___Sign convention used:__
 
 
