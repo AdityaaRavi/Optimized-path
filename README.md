@@ -1,4 +1,4 @@
-# path-of-least-something
+# Optimized-path
 In this repo, I try to create an algorithm that finds a path that minimizes/maximizes the given parameter, starting with collisions.
 
 ## QQ ##
