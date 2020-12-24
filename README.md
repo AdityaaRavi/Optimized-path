@@ -49,8 +49,14 @@ ___Possible movements in the `board`:___
 
 There will be an abstract method in the data ingestion class described in "part 2" of the "Entire program explained" section whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can make. This method will be called once in the constructor of the `Algoritm` class and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter.
 
-___Possible Return values of the function:__
+___Possible Return values of the function:___
 
-___Sign convention used:__
+- `path_found` = 1
+- `dead_path` = -1
 
+___Sign convention used:___
 
+- Towards the floor = `+dy`
+- Towards the roof = `-dy`
+- Towards Left = `-dx`
+- Towards right = `+dx`
