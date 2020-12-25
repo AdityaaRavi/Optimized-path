@@ -6,7 +6,7 @@ In this repo, I try to create an algorithm that finds a path that minimizes/maxi
 
 - _Has someone thought about the algorithm I end up making?_ Maybe.
 
-- _So why I am doing it?_ I am currently in winter break during COVID, and hence I have way too much time on my hands, and this seems fun to do.
+- _So why I am doing it?_ I am currently in winter break during COVID - causing me to have way too much time on my hands, and this seems fun to do.
 
 ## A bit more detailed description of what I want to do here: ##
 
