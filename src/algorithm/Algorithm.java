@@ -7,6 +7,7 @@ public abstract class Algorithm {
     char[][] board;
     int startX;
     int startY;
+    boolean calcRan;
     // current data
     int current_num_occur = 0;
     ArrayList<Integer[]> curr_path = new ArrayList<Integer[]>();
@@ -24,6 +25,7 @@ public abstract class Algorithm {
         this.board = board;
         this.startX = startX;
         this.startY = startY;
+        this.calcRan = false;
     }
     /**
      *  The actual recursive method that carries out all the iterations.
@@ -32,6 +34,15 @@ public abstract class Algorithm {
     public int calculate(){
 
         return 0;
+    }
+
+    /**
+     * Returns the value of the best path.
+     * @return null if calcute() was never called, ArrayList<Integer[]> best_path if it was run.
+     */
+    public ArrayList<Integer[]> getBestPath(){
+        if(calcRan) return best_path;
+        else return null;
     }
 
     /** abstract method to get all possible movements in the current board being tested.

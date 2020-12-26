@@ -1,6 +1,9 @@
 // importing relevant files and libraries
 
 import fileIO.*;
+
+import java.util.ArrayList;
+
 import algorithm.*;
 
 public class Main{
@@ -17,8 +20,13 @@ public class Main{
         }
         
         // Creating an object of the algorithm class
-        Algorithm forest = new ForestAlgorithm();
+        Algorithm forest = new ForestAlgorithm(board, 0, 0);
+        //run the algorithm
+        forest.calculate();
+        //getting the results of the algorithm.
+        ArrayList<Integer[]> result = forest.getBestPath();
         
+
 
 
     }
