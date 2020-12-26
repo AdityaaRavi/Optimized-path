@@ -25,6 +25,7 @@ public class Main{
         forest.calculate();
         //getting the results of the algorithm.
         ArrayList<Integer[]> result = forest.getBestPath();
+        //Create a new Show class object that prints out the path as both the (dx, dy) and on the map as well.
         
 
 
