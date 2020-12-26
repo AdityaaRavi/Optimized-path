@@ -21,4 +21,17 @@ public class ForestAlgorithm extends Algorithm {
         return false;
     }
 
+    @Override
+    boolean isBranchDead(int current_num_occur, int best_num_occur) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    boolean updateIfBetterPathFound(int current_num_occur, int best_num_occur, ArrayList<Integer[]> curr_path,
+            ArrayList<Integer[]> best_path) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
 }

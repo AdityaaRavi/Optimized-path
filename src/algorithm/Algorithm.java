@@ -25,15 +25,26 @@ public abstract class Algorithm {
         this.startX = startX;
         this.startY = startY;
     }
-    
+    /**
+     *  The actual recursive method that carries out all the iterations.
+     * @return dead_path or path_found token
+     */
     public int calculate(){
 
         return 0;
     }
 
-    //abstract method to get all possible movements in the current board being tested.
+    /** abstract method to get all possible movements in the current board being tested.
+     * @return Array<Integer[]> of all possible movements
+    */
     abstract ArrayList<Integer[]> getPossibleMovements();
     //abstract method to check if the end condition is reached
     abstract boolean reachedEnd(int currX, int currY);
+    //abstract method to check if a branch is dead
+    abstract boolean isBranchDead(int current_num_occur, int best_num_occur);
+    //update best_num_occur and best_path if a better path is found.
+    abstract boolean updateIfBetterPathFound(int current_num_occur, int best_num_occur, 
+        ArrayList<Integer[]> curr_path, ArrayList<Integer[]> best_path);
+    
 
 }
