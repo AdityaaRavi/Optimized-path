@@ -6,15 +6,26 @@ public class ForestAlgorithm extends Algorithm {
 
     int boardWidth;
     int boardHeight;
-    public ForestAlgorithm(char[][] board, int startX, int startY) {
+    int speed; // The maximum number of boxes that can be traversed at anytime.
+    public ForestAlgorithm(char[][] board, int startX, int startY, int speed) {
         super(board, startX, startY);
         this.boardHeight = board.length;
         this.boardWidth = board[0].length;
+        setSpeed(speed);
+    }
+
+    public int setSpeed(int speed){
+        if(speed > 0){
+            calcRan = false;
+            return (this.speed = speed);
+        }
+        else throw new IllegalArgumentException("Speed must be at least 1."); 
     }
 
     @Override
     ArrayList<Integer[]> getPossibleMovements() {
-        // TODO Auto-generated method stub
+        ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
+
         return null;
     }
 

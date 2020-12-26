@@ -7,7 +7,7 @@ public abstract class Algorithm {
     private char[][] board;
     private int startX;
     private int startY;
-    private boolean calcRan;
+    boolean calcRan;
     
     ////////////////////////////////////////////////////////// data of best path
     private int best_num_occur = Integer.MAX_VALUE;
