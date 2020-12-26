@@ -1,22 +1,30 @@
 package fileIO;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import algorithm.Algorithm;
 
 public abstract class Show {
     //fields
     private String fileName;
-    private File fileHandler;
+    private Path fileHandler;
 
     public Show(String fileName){
         this.fileName = fileName;
-        this.fileHandler = new File(fileName);
+        this.fileHandler = Path.of(fileName);
     }
     
     abstract int formatAndPrint(Algorithm a, boolean printToStdout);
 
     public int printToFile(String s){
-        return -1;
+        try{
+            Files.writeString(fileHandler, s);
+            return 0;
+        }catch (IOException e){
+            return -1;
+        }
     }
 }
