@@ -3,7 +3,7 @@ package fileIO;
 import java.util.Scanner;
 import java.io.File;
 
-public class Ingest {
+public abstract class Ingest {
     //fields
     String fileName;
     File fileHandler;
@@ -19,8 +19,5 @@ public class Ingest {
         fileHandler = new File(fileName);
     }
 
-    public char[][] getBoard(){
-        
-        return null;
-    }
+    public abstract char[][] getBoard();
 }
