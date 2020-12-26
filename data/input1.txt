@@ -1,0 +1,8 @@
+obstacle and empty space respectively: # =
+width and height respectively: 6 6
+= = # # # = 
+# # = # # = 
+# = = # # # 
+= # = = = = 
+# # # = # = 
+# # = = = = 

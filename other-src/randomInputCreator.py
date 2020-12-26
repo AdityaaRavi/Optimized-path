@@ -41,22 +41,24 @@ def fill_obstacle(board, probability, w, h=h):
 
 
 #testing fill obstacle in array method
-print("Testing fill obstacle method: ")
+#print("Testing fill obstacle method: ")
 fill_obstacle(board, num_trees/(w*h), w, h)
-print_board()
+#print_board()
 
 def print_to_file(board, w, h, filename=file_name):
     file_handler = open(filename, "w")
-    writeme =  ""
+    writeme =  "obstacle and empty space respectively: " + tree_char + " " + empty_char + "\n"
+    writeme += "width and height respectively: " + str(w) + " " + str(h) + "\n"
     for i in range(0, h):
         for j in range(0, w):
             writeme += board[i][j] + " "
-            print(board[i][j], end=" ")
+            #print(board[i][j], end=" ")
         writeme += "\n"
-        print()
+        #print()
     file_handler.write(writeme)
+    print("\nThe following was added to the given file:\n\n" + writeme)
     file_handler.close()
 
 # testing print to file method
-print("Testing print to file method: ")
+#print("Testing print to file method: ")
 print_to_file(board, w, h, file_name)

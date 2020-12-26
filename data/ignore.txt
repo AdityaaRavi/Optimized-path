@@ -1,0 +1,12 @@
+obstacle and empty space respectively: # =
+width and height respectively: 10 10
+# = # # # # # = = # 
+= # = = # = # # # # 
+# = = # = # = = # # 
+= # # # # = # = = # 
+# = # # # = # = # # 
+# # # # # # = # # = 
+= # # = = = = = # # 
+= # # = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
