@@ -21,12 +21,15 @@ public class Main{
         
         // Creating an object of the algorithm class
         Algorithm forest = new ForestAlgorithm(board, 0, 0);
+        
         //run the algorithm
         forest.calculate(forest.getStartX(), forest.getStartY(), 0, new ArrayList<Integer[]>());
-        //getting the results of the algorithm.
-        ArrayList<Integer[]> result = forest.getBestPath();
+        
+        //getting the results of the algorithm. (Not needed if you use a class that extends the Show class)
+        //ArrayList<Integer[]> result = forest.getBestPath();
+        
         //Create a new Show class object that prints out the path as both the (dx, dy) and on the map as well.
-        (new ForestShow()).formatAndPrint(forest, true);
+        (new ForestShow("Output.txt")).formatAndPrint(forest, true);
 
 
 

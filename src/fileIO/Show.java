@@ -9,11 +9,9 @@ import algorithm.Algorithm;
 
 public abstract class Show {
     //fields
-    private String fileName;
     private Path fileHandler;
 
     public Show(String fileName){
-        this.fileName = fileName;
         this.fileHandler = Path.of(fileName);
     }
     
@@ -24,6 +22,7 @@ public abstract class Show {
             Files.writeString(fileHandler, s);
             return 0;
         }catch (IOException e){
+            e.printStackTrace();
             return -1;
         }
     }
