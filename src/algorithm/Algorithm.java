@@ -91,13 +91,14 @@ public abstract class Algorithm {
     abstract int updateNumOccur(int current_num_occur, char current_char);
     /////////////////////////////////////////////////// getters and setters.
     /**
-     * Returns the value of the best path.
-     * @return null if calcute() was never called, ArrayList<Integer[]> best_path if it was run.
+     * Returns the a copy of the best path.
+     * @return null if calcute() was never called, copy of ArrayList<Integer[]> best_path if it was run.
      */
-    public ArrayList<Integer[]> getBestPath(){
+    public ArrayList<Integer[]> getBestPathCopy(){
         if(calcRan) return best_path;
         else return null;
     }
+
     /**
      * Gets the number of occurances of the variable you wanted to optimize for in the best path
      * @return Best path num occurances/ -1 if calculate() was never run.
@@ -106,6 +107,25 @@ public abstract class Algorithm {
         if(calcRan) return best_num_occur;
         else return -1;
     }
+
+    /**
+     * Sets the number of occurances of the variable you wanted to optimize for in the best path
+     * @param occur The number to set the value of best path too.
+     * @return the value set to best num occur.
+     */
+    protected int setBestNumOccur(int occur){
+        return best_num_occur = occur; 
+    }
+
+    /**
+     * Use method to change the path that best path refers to.
+     * @param path The path that best path must be changed to.
+     * @return The path that was just set as the best path.
+     */
+    protected ArrayList<Integer[]> setBestPath(ArrayList<Integer[]> path) {
+        return best_path = path;
+    }
+
     /**
      * Gets the start X value of this instance of the algorithm.
      * @return Start X value

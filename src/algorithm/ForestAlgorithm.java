@@ -41,7 +41,12 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     boolean updateIfBetterPathFound(int current_num_occur, ArrayList<Integer[]> curr_path) {
-        // TODO Auto-generated method stub
+        if(getBestPathCopy().size() == 0 || current_num_occur < getBestNumOccur()){
+            setBestPath(curr_path);
+            setBestNumOccur(current_num_occur);
+            return true;
+        }
+
         return false;
     }
 
