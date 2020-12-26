@@ -25,8 +25,8 @@ public class ForestAlgorithm extends Algorithm {
     @Override
     ArrayList<Integer[]> getPossibleMovements() {
         ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
-
-        return null;
+        for(int dy = 1, dx = speed - dy; dy <= speed; dy++, dx = speed - dy) movements.add(new Integer[]{dx, dy}); 
+        return movements;
     }
 
     @Override
