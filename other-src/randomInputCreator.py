@@ -34,8 +34,10 @@ def fill_obstacle(board, probability, w, h=h):
             if(choice == tree_char):
                 curr_trees += 1
             
-            if(curr_trees <= num_trees):
+            if(choice == tree_char and curr_trees <= num_trees):
                 board[i].append(choice)
+            else:
+                board[i].append(empty_char)
 
 
 #testing fill obstacle in array method
