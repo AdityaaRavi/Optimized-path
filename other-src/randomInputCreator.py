@@ -26,11 +26,11 @@ print_board()
 def fill_obstacle(board, probability, w):
     for i in range(0, w):
         for char in board[i]:
-            choice = random.choices([empty_char, tree_char], weights=[1-probability/10, probability/10], k=1)[0]
+            choice = random.choices([empty_char, tree_char], weights=[1-probability, probability], k=1)[0]
             print("The choice picked is ", choice, " The probablity is:", probability)
             char = choice
 
 #testing fill obstacle in array method
 print("Testing fill obstacle method: ")
-fill_obstacle(board, num_trees/w*h, w)
+fill_obstacle(board, num_trees/(w*h), w)
 print_board()
