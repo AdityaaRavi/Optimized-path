@@ -38,11 +38,22 @@ public abstract class Algorithm {
      * @return Array<Integer[]> of all possible movements
     */
     abstract ArrayList<Integer[]> getPossibleMovements();
-    //abstract method to check if the end condition is reached
+   
+    /**abstract method to check if the end condition is reached
+     * @param currX The X position of the current recursive call
+     * @param currY The Y positon of the current recursive call
+     * @return true/false to denote if the end of the board is reached or not respectively.
+     */
     abstract boolean reachedEnd(int currX, int currY);
-    //abstract method to check if a branch is dead
+    
+    /** abstract method to check if a branch is dead
+     * @return true/false to denote if a branch is dead or not respectively as described in the README.md file.
+     */
     abstract boolean isBranchDead(int current_num_occur, int best_num_occur);
-    //update best_num_occur and best_path if a better path is found.
+    
+    /** update best_num_occur and best_path if a better path is found.
+     * @return true/false to denote if a better path was found or not respectively.
+    */
     abstract boolean updateIfBetterPathFound(int current_num_occur, int best_num_occur, 
         ArrayList<Integer[]> curr_path, ArrayList<Integer[]> best_path);
     
