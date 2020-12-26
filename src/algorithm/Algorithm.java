@@ -2,17 +2,12 @@ package algorithm;
 
 import java.util.ArrayList;
 
-import org.graalvm.compiler.hotspot.stubs.OutOfBoundsExceptionStub;
-
 public abstract class Algorithm {
     //class fields
     private char[][] board;
     private int startX;
     private int startY;
     private boolean calcRan;
-    // (DON'T NEED THIS ANYMORE) /////////////////////////////////////////////////////////// current data CHANGE ------ ALL MUST BE LOCAL VARIABLES!!!!
-    // int current_num_occur = 0;
-    // ArrayList<Integer[]> curr_path = new ArrayList<Integer[]>();
     
     ////////////////////////////////////////////////////////// data of best path
     private int best_num_occur = Integer.MAX_VALUE;
