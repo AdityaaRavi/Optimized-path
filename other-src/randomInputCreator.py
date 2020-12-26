@@ -45,7 +45,7 @@ print_board()
 
 def print_to_file(board, w, h, filename=file_name):
     file_handler = open(filename, "w")
-    writeme = ""
+    writeme =  ""
     for i in range(0, h):
         for j in range(0, w):
             writeme += board[i][j] + " "
