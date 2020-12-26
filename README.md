@@ -1,13 +1,6 @@
 # Optimized-path
 In this repo, I try to create an algorithm that finds a path that minimizes/maximizes the given parameter, starting with collisions.
 
-## QQ ##
-- _Is this algorithm going to be particulalry efficient?_ No, no it is not.
-
-- _Has someone thought about the algorithm I end up making?_ Maybe.
-
-- _So why I am doing it?_ I am currently in winter break during COVID - causing me to have way too much time on my hands, and this seems fun to do.
-
 ## A bit more detailed description of what I want to do here: ##
 
 I want to create a java program/API that takes in input from a text file about a `board` that can represent a maze/forest/what not; a starting position (`sx`,`sy`); and a parameter to minimize/maximize [I will refer to it as "optimize" from here on] (for example the number of collisions with a given object).
@@ -21,11 +14,11 @@ I am inital going to work on an algorithm that minimizes the number of collision
   To be able to test the algorithm I end up making, I need to have sample inputs first. And since I am not a masochist, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic. (DONE!)
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm.
-  This class will be an abstract class, as the possible movements that the algorithm is allowed to move just might vary quite wildly.
+  This class will be an abstract class, as the possible movements that the algorithm is allowed to move just might vary quite wildly. (Abstract class done, specific class in progress)
 
-- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm.
+- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm. (Abstract class done, specific class in progress)
 
-- __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a different text file in a way us puny humans will be able to easily understand.
+- __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a different text file in a way us puny humans will be able to easily understand. (Abstract class done, specific class in progress)
 
 - __Part 5:__ Once all that is done, update `README.md` to reflect what classes do what and provide all the information a random fellow Computer Scienist will need to use my program as an API for whatever they do.
 
