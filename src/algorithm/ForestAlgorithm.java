@@ -6,7 +6,7 @@ public class ForestAlgorithm extends Algorithm {
 
     int boardWidth;
     int boardHeight;
-    int speed; // The maximum number of boxes that can be traversed at anytime.
+    int speed; // The number of boxes that MUST be traversed at anytime.
     public ForestAlgorithm(char[][] board, int startX, int startY, int speed) {
         super(board, startX, startY);
         this.boardHeight = board.length;
@@ -31,14 +31,12 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     boolean reachedEnd(int currX, int currY) {
-        // TODO Auto-generated method stub
-        return false;
+        return currY >= boardHeight;
     }
 
     @Override
     boolean isBranchDead(int current_num_occur) {
-        // TODO Auto-generated method stub
-        return false;
+        return current_num_occur > getBestNumOccur();
     }
 
     @Override
