@@ -17,6 +17,7 @@ public class Main{
         }
         
         // Creating an object of the algorithm class
+        Algorithm forest = new ForestAlgorithm();
         
 
 
