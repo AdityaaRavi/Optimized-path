@@ -33,4 +33,10 @@ public class ForestAlgorithm extends Algorithm {
         return false;
     }
 
+    @Override
+    int updateNumOccur(int current_num_occur, char current_char) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
 }
