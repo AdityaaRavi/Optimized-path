@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class ForestAlgorithm extends Algorithm {
 
+    int boardWidth;
+    int boardHeight;
     public ForestAlgorithm(char[][] board, int startX, int startY) {
         super(board, startX, startY);
-        // TODO Auto-generated constructor stub
+        this.boardHeight = board.length;
+        this.boardWidth = board[0].length;
     }
 
     @Override
@@ -37,6 +40,12 @@ public class ForestAlgorithm extends Algorithm {
     int updateNumOccur(int current_num_occur, char current_char) {
         // TODO Auto-generated method stub
         return 0;
+    }
+
+    @Override
+    boolean outOfBounds(int currX, int currY) {
+        if(currX >= boardWidth || currY >= boardHeight) return true;
+        return false;
     }
 
 }

@@ -2,6 +2,8 @@ package algorithm;
 
 import java.util.ArrayList;
 
+import org.graalvm.compiler.hotspot.stubs.OutOfBoundsExceptionStub;
+
 public abstract class Algorithm {
     //class fields
     private char[][] board;
@@ -47,15 +49,28 @@ public abstract class Algorithm {
         }
         
         //main case
-        for(Integer[] pos : possibleMovements) calculate(pos[0], pos[1], updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
+        for(Integer[] pos : possibleMovements){
+            if(!outOfBounds(pos[0], pos[1]))
+                calculate(pos[0], pos[1], updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
+        }
 
         return PATH_FOUND;
     }
 
+    /**
+     * Out of bounds check to be performed by the child class.
+     * @param currX The X position to check
+     * @param currY The Y position to check
+     * @return true if outOfBounds, false otherwise
+     */
+    abstract boolean outOfBounds(int currX, int currY);
 
-    /** abstract method to get all possible movements in the current board being tested.
+    /**
+     * abstract method to get all possible movements in the current board being
+     * tested.
+     * 
      * @return Array<Integer[]> of all possible movements
-    */
+     */
     abstract ArrayList<Integer[]> getPossibleMovements();
    
     /**abstract method to check if the end condition is reached
