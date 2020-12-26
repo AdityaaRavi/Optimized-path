@@ -14,5 +14,6 @@ def fill_board(board, w, h):
             board[i].append(empty_char)
 
 # testing the fill_board method
+fill_board(board, w, h)
 for row in board:
     print(row)
