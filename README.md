@@ -18,7 +18,7 @@ I am inital going to work on an algorithm that minimizes the number of collision
 ### There are 6 things to want I want to do here:
 
 - __Part 1: Getting the board ready:__
-  To be able to test the algorithm I end up making, I need to have sample inputs first. And since I am not a masochist, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic.
+  To be able to test the algorithm I end up making, I need to have sample inputs first. And since I am not a masochist, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic. (DONE!)
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm.
   This class will be an abstract class, as the possible movements that the algorithm is allowed to move just might vary quite wildly.
