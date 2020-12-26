@@ -37,9 +37,19 @@ public abstract class Algorithm {
      */
     public int calculate(int currX, int currY, int current_num_occur, ArrayList<Integer[]> curr_path){
         //Base case 1
-        if(reachedEnd(currX, currY));
+        if(reachedEnd(currX, currY)){
+            updateIfBetterPathFound(current_num_occur, curr_path);
+            return PATH_FOUND;
+        }
         //Base case 2
-        return 0;
+        if(isBranchDead(current_num_occur)){
+            return DEAD_PATH;
+        }
+        
+        //main case
+        for(Integer[] pos : possibleMovements) calculate(pos[0], pos[1], updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
+
+        return PATH_FOUND;
     }
 
 
@@ -58,14 +68,17 @@ public abstract class Algorithm {
     /** abstract method to check if a branch is dead
      * @return true/false to denote if a branch is dead or not respectively as described in the README.md file.
      */
-    abstract boolean isBranchDead(int current_num_occur, int best_num_occur);
+    abstract boolean isBranchDead(int current_num_occur);
     
     /** update best_num_occur and best_path if a better path is found.
      * @return true/false to denote if a better path was found or not respectively.
     */
-    abstract boolean updateIfBetterPathFound(int current_num_occur, int best_num_occur, 
-        ArrayList<Integer[]> curr_path, ArrayList<Integer[]> best_path);
-    
+    abstract boolean updateIfBetterPathFound(int current_num_occur, ArrayList<Integer[]> curr_path);
+    /**
+     * Update num_occur
+     * @return returns the updated num_occur value based on the current character.
+     */
+    abstract int updateNumOccur(int current_num_occur, char current_char);
     /////////////////////////////////////////////////// getters and setters.
     /**
      * Returns the value of the best path.
