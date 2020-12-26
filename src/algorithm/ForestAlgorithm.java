@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class ForestAlgorithm extends Algorithm {
 
+    final char OBSTACLE_CHAR = '#';
     int boardWidth;
     int boardHeight;
     int speed; // The number of boxes that MUST be traversed at anytime.
@@ -52,8 +53,8 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     int updateNumOccur(int current_num_occur, char current_char) {
-        // TODO Auto-generated method stub
-        return 0;
+        if(current_char == OBSTACLE_CHAR) return ++current_num_occur;
+        return current_num_occur;
     }
 
     @Override
