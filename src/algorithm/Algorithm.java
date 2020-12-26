@@ -8,19 +8,20 @@ public abstract class Algorithm {
     int startX;
     int startY;
     boolean calcRan;
-    // current data
-    int current_num_occur = 0;
-    ArrayList<Integer[]> curr_path = new ArrayList<Integer[]>();
-    // data of best path
+    // (DON'T NEED THIS ANYMORE) /////////////////////////////////////////////////////////// current data CHANGE ------ ALL MUST BE LOCAL VARIABLES!!!!
+    // int current_num_occur = 0;
+    // ArrayList<Integer[]> curr_path = new ArrayList<Integer[]>();
+    
+    ////////////////////////////////////////////////////////// data of best path
     int best_num_occur = Integer.MAX_VALUE;
     ArrayList<Integer[]> best_path = new ArrayList<Integer[]>();
-    // constants
+    ////////////////////////////////////////////////////////// constants
     final int DEAD_PATH = -1;
     final int PATH_FOUND = 1;
-    //possible movements that can be enacted in each iteration.
+    ///////////////////////////////////////////////possible movements that can be enacted in each iteration.
     ArrayList<Integer[]> possibleMovements = getPossibleMovements();
 
-    //constructor
+    /////////////////constructor
     public Algorithm(char[][] board, int startX, int startY){
         this.board = board;
         this.startX = startX;
@@ -31,7 +32,7 @@ public abstract class Algorithm {
      *  The actual recursive method that carries out all the iterations.
      * @return dead_path or path_found token
      */
-    public int calculate(){
+    public int calculate(int current_num_occur, ArrayList<Integer[]> curr_path){
 
         return 0;
     }
