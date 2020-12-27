@@ -7,7 +7,7 @@ public abstract class Algorithm {
     private char[][] board;
     private int startX;
     private int startY;
-    boolean calcRan;
+    protected boolean calcRan;
     
     ////////////////////////////////////////////////////////// data of best path
     private int best_num_occur = Integer.MAX_VALUE;
@@ -45,8 +45,10 @@ public abstract class Algorithm {
         
         //main case
         for(Integer[] pos : possibleMovements){
-            if(!outOfBounds(pos[0], pos[1]))
-                calculate(pos[0], pos[1], updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
+            int nextX = currX + pos[0];
+            int nextY = currY + pos[1];
+            if(!outOfBounds(nextX, nextY))
+                calculate(nextX, nextY, updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
         }
 
         return PATH_FOUND;
