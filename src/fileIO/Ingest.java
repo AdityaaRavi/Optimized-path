@@ -11,7 +11,7 @@ public abstract class Ingest {
     protected Scanner fileScanner;
 
     public Ingest(){
-        this.fileName = "input1.txt";
+        this.fileName = "data/input1.txt";
         fileHandler = new File(fileName);
         try{
             fileScanner = new Scanner(fileHandler);

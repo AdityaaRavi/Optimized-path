@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import algorithm.*;
 
-public class Main{
+public class Runner{
 
     public static void main(String[] args){
         // get the board as a char[][] using the ingest class.
