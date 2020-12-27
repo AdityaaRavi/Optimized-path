@@ -19,7 +19,20 @@ public class ForestShow extends Show {
         for(Integer[] arr : a.getBestPathCopy()) 
             coordinates.add(new Integer[]{coordinates.get(i)[0] + arr[0], 
                 coordinates.get(i++)[1] + arr[1]});
-        return 0;
+        char[][] board = a.getBoardCopy();
+        for(Integer[] e : coordinates) board[e[1]][e[0]] = 'V';
+        printme += "Legend:\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n";
+        printme += "In the best path found:\n"
+            + "Number of places visited: " + coordinates.size() + "\n";
+        printme += "Number of obstacles encountered: " + a.getBestNumOccur();
+        printme += "Coordinates visited: ";
+        for(Integer[] e : coordinates) printme += " (x=" + e[0] + ", y=" + e[1] + ")";
+        printme += "\nThe whole board:\n\n";
+        for(int j = 0; j < board.length; j++) printme += board[j].toString() + "\n";
+
+        if(printToStdout) System.out.println(printme);
+        
+        return printToFile(printme); 
     }
     
 }
