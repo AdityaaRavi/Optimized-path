@@ -30,7 +30,16 @@ public class IngestForest extends Ingest{
         line2.close();
 
         // processing each line of the file to get all parts of the board.
-        return null;
+        char[][] board = new char[height][width];
+        int j = 0;
+        while(fileScanner.hasNextLine()){
+            Scanner line = new Scanner(fileScanner.nextLine());
+            for(int i = 0; i < width; i++) board[j][i] = line.next().charAt(0);
+            j++;
+            line.close();
+        }
+        fileScanner.close();
+        return board;
     }
     
 }
