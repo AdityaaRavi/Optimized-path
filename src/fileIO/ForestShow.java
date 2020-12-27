@@ -13,6 +13,8 @@ public class ForestShow extends Show {
     @Override
     public int formatAndPrint(Algorithm a, boolean printToStdout) {
         String printme = "";
+        
+        //finding out the coordinates visited based on the dx and dy taken in each step 
         ArrayList<Integer[]> coordinates = new ArrayList<Integer[]>();
         coordinates.add(new Integer[]{a.getStartX(), a.getStartY()});
         int i = 0;
@@ -20,16 +22,25 @@ public class ForestShow extends Show {
             coordinates.add(new Integer[]{coordinates.get(i)[0] + arr[0], 
                 coordinates.get(i++)[1] + arr[1]});
         char[][] board = a.getBoardCopy();
+        
+        // steping through each of the coordinates thus found and marking it up on a copy of the board.
         for(Integer[] e : coordinates) board[e[1]][e[0]] = 'V';
+        
+        // printing out some useful data
         printme += "Legend:\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n";
         printme += "In the best path found:\n"
             + "Number of places visited: " + coordinates.size() + "\n";
         printme += "Number of obstacles encountered: " + a.getBestNumOccur();
+        
+        // printing out the actual number of all the coordinates visited.
         printme += "Coordinates visited: ";
         for(Integer[] e : coordinates) printme += " (x=" + e[0] + ", y=" + e[1] + ")";
+        
+        //printing out the whole board
         printme += "\nThe whole board:\n\n";
         for(int j = 0; j < board.length; j++) printme += board[j].toString() + "\n";
 
+        // printing to stdin too if requested.
         if(printToStdout) System.out.println(printme);
         
         return printToFile(printme); 
