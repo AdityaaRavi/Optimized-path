@@ -48,6 +48,7 @@ public abstract class Algorithm {
         for(Integer[] pos : possibleMovements){
             int nextX = currX + pos[0];
             int nextY = currY + pos[1];
+            System.out.println("NextX=" + nextX + ", nextY=" + nextY);
             if(!outOfBounds(nextX, nextY))
                 calculate(nextX, nextY, updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
         }
