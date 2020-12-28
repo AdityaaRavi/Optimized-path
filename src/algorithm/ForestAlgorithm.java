@@ -32,26 +32,18 @@ public class ForestAlgorithm extends Algorithm {
         for(int dy = 1; dy < this.speed; dy++){
             movements.add(new Integer[]{this.speed - dy, dy});
             movements.add(new Integer[]{-(this.speed - dy), dy});
-            //System.out.println("PosX (+) =" + (this.speed-dy) + ", posY=" + dy);
-            //System.out.println("PosX (-) =" + -(this.speed-dy) + ", posY=" + dy);
         }
-        // movements.add(new Integer[]{ -1, 1});
-        // //movements.add(new Integer[]{ 0, 1});
-        // movements.add(new Integer[]{ 1, 1});
-        //System.out.println("==================================================");
-        for(Integer[] w : movements) System.out.println("possible movements: dx=" + w[0] + ", dy=" + w[1]); 
+        //for(Integer[] w : movements) System.out.println("possible movements: dx=" + w[0] + ", dy=" + w[1]); 
         return movements;
     }
 
     @Override
     boolean reachedEnd(int currX, int currY) {
-        //System.out.printf("============ Y: %d, HEIGHT: %d\n", currY, boardHeight);
         return currY >= boardHeight - 1;
     }
 
     @Override
     boolean isBranchDead(int current_num_occur) {
-       // System.out.printf("============ CURR: %d, BEST: %d\n", current_num_occur, getBestNumOccur());
         return current_num_occur > getBestNumOccur();
     }
 
@@ -68,18 +60,13 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     int updateNumOccur(int current_num_occur, char current_char) {
-        //System.out.println("============================    CHAR: " + current_char + ", NUM_OCC: " + current_num_occur);
-        if(current_char == OBSTACLE_CHAR){
-            ++current_num_occur;
-            //System.out.println("==============================   NUM_OCC: " + current_num_occur);
-            return current_num_occur; // ++current_num_occur;
-        } 
+        if(current_char == OBSTACLE_CHAR) return ++current_num_occur;
         return current_num_occur;
     }
 
     @Override
     boolean outOfBounds(int currX, int currY) {
-        if(currX >= boardWidth || currX < 0/*|| currY >= boardHeight*/) return true;
+        if(currX >= boardWidth || currX < 0) return true;
         return false;
     }
 

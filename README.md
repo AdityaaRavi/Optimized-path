@@ -15,7 +15,7 @@ I am inital going to work on an algorithm that minimizes the number of collision
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm. (DONE!)
 
-- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm. (Debug in progress)
+- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm. (DONE!) (But more can be done to improve efficieny)
 
 - __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a different text file in a way us puny humans will be able to easily understand. (DONE!)
 

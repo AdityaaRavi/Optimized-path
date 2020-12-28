@@ -33,31 +33,25 @@ public abstract class Algorithm {
      *  The actual recursive method that carries out all the iterations.
      * @param current_num_occur 0 for first call, number of steps till now for recursive calls
      * @param curr_path empty ArrayList<Integer[]> in first call, an ArrayList of the same type 
-     *                  will all movements taken till now for recursive calls.
+     *                  will all movements taken till now for recursive calls (a copy of curr_path with your current position added to it).
      * @return dead_path or path_found token
      */
     public int calculate(int currX, int currY, int current_num_occur, ArrayList<Integer[]> curr_path){
+        /////////////////////// Base cases. (See README.md for more information)
         //Base case 1
         this.calcRan = true;
         if(reachedEnd(currX, currY)){
             curr_path.add(new Integer[]{currX, currY});
             updateIfBetterPathFound(current_num_occur, curr_path);
-           // System.out.println(PATH_FOUND);
-            //System.out.println("Reached end");
             return PATH_FOUND;
         }
         //Base case 2
-        if(isBranchDead(current_num_occur)){
-
-            // System.out.println(DEAD_PATH);
-            //System.out.println("Dead branch");
-            return DEAD_PATH;
-        }
-        //Base case 3 ////////////////////////// UPDATE README.md ABOUT THIS!!!!!!!
+        if(isBranchDead(current_num_occur)) return DEAD_PATH;
+        //Base case 3 
         if(best_num_occur == 0) return PATH_FOUND;
         
         
-        //main case
+        /////////////////////////////////////////////////main case
         curr_path.add(new Integer[]{currX, currY});
         for(Integer[] pos : possibleMovements){
             int toPassNumOccur = updateNumOccur(current_num_occur, board[currY][currX]);
@@ -69,7 +63,6 @@ public abstract class Algorithm {
                   //  ", Best num occur: " + best_num_occur);
             }
         }
-        //System.out.println("==================================================");
         return PATH_FOUND;
     }
 

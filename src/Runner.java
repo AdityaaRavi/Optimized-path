@@ -33,6 +33,5 @@ public class Runner{
         (new ForestShow(outputPath)).formatAndPrint(forest, true);
 
 
-
     }
 }
