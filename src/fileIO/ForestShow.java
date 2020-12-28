@@ -2,6 +2,8 @@ package fileIO;
 
 import java.util.ArrayList;
 
+import javax.swing.plaf.synth.SynthStyle;
+
 import algorithm.Algorithm;
 
 public class ForestShow extends Show {
@@ -18,27 +20,33 @@ public class ForestShow extends Show {
         ArrayList<Integer[]> coordinates = new ArrayList<Integer[]>();
         coordinates.add(new Integer[]{a.getStartX(), a.getStartY()});
         int i = 0;
-        for(Integer[] arr : a.getBestPathCopy()) 
-            coordinates.add(new Integer[]{coordinates.get(i)[0] + arr[0], 
-                coordinates.get(i++)[1] + arr[1]});
+        //System.out.println(a + ", coordinates: x="  + coordinates.get(0)[0] + ", y=" + coordinates.get(0)[1]);
+        for(Integer[] arr : a.getBestPathCopy()){ 
+            coordinates.add(new Integer[]{coordinates.get(i)[0] + arr[0], coordinates.get(i++)[1] + arr[1]});
+            System.out.println("coordinates: x="  + coordinates.get(coordinates.size() - 1)[0] + ", y=" + coordinates.get(coordinates.size() - 1)[1]);
+        }
+                
         char[][] board = a.getBoardCopy();
         
         // steping through each of the coordinates thus found and marking it up on a copy of the board.
         for(Integer[] e : coordinates) board[e[1]][e[0]] = 'V';
         
         // printing out some useful data
-        printme += "Legend:\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n";
+        printme += "Legend:\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n\n";
         printme += "In the best path found:\n"
             + "Number of places visited: " + coordinates.size() + "\n";
         printme += "Number of obstacles encountered: " + a.getBestNumOccur();
         
         // printing out the actual number of all the coordinates visited.
-        printme += "Coordinates visited: ";
+        printme += "\nCoordinates visited: ";
         for(Integer[] e : coordinates) printme += " (x=" + e[0] + ", y=" + e[1] + ")";
         
         //printing out the whole board
-        printme += "\nThe whole board:\n\n";
-        for(int j = 0; j < board.length; j++) printme += board[j].toString() + "\n";
+        printme += "\n\nThe whole board:\n\n";
+        for(int j = 0; j < board.length; j++) {
+            for(int k = 0; k < board[j].length; k++) printme += board[j][k] + " ";
+            printme += "\n";
+        } 
 
         // printing to stdin too if requested.
         if(printToStdout) System.out.println(printme);

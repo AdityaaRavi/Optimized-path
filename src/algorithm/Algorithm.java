@@ -34,6 +34,7 @@ public abstract class Algorithm {
      */
     public int calculate(int currX, int currY, int current_num_occur, ArrayList<Integer[]> curr_path){
         //Base case 1
+        this.calcRan = true;
         if(reachedEnd(currX, currY)){
             updateIfBetterPathFound(current_num_occur, curr_path);
             return PATH_FOUND;
