@@ -40,6 +40,7 @@ public abstract class Algorithm {
         //Base case 1
         this.calcRan = true;
         if(reachedEnd(currX, currY)){
+            curr_path.add(new Integer[]{currX, currY});
             updateIfBetterPathFound(current_num_occur, curr_path);
            // System.out.println(PATH_FOUND);
             //System.out.println("Reached end");
@@ -47,6 +48,7 @@ public abstract class Algorithm {
         }
         //Base case 2
         if(isBranchDead(current_num_occur)){
+            
             // System.out.println(DEAD_PATH);
             //System.out.println("Dead branch");
             return DEAD_PATH;

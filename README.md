@@ -49,8 +49,8 @@ ___Possible Return values of the function:___
 
 
 ___Variable references:___
-- `x` = starts at 0, increases as you go left (see below)
-- `y` = starts at 0, increases as you go down (see below)
+- `x` - starts at 0, increases as you go left (see below)
+- `y` - starts at 0, increases as you go down (see below)
 
 ___Sign convention used:___
 
