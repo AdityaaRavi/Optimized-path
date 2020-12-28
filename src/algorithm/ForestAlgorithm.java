@@ -40,11 +40,13 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     boolean reachedEnd(int currX, int currY) {
+        System.out.printf("============ Y: %d, HEIGHT: %d\n", currY, boardHeight);
         return currY >= boardHeight;
     }
 
     @Override
     boolean isBranchDead(int current_num_occur) {
+        System.out.printf("============ CURR: %d, BEST: %d\n", current_num_occur, getBestNumOccur());
         return current_num_occur > getBestNumOccur();
     }
 
@@ -67,7 +69,7 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     boolean outOfBounds(int currX, int currY) {
-        if(currX >= boardWidth || currY >= boardHeight) return true;
+        if(currX >= boardWidth /*|| currY >= boardHeight*/) return true;
         return false;
     }
 
