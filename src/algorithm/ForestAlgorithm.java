@@ -33,6 +33,7 @@ public class ForestAlgorithm extends Algorithm {
         setSpeed(5);
         for(int dy = 1; dy < this.speed; dy++){
             movements.add(new Integer[]{this.speed - dy, dy});
+            movements.add(new Integer[]{-(this.speed - dy), dy});
             //System.out.println("NextX=" + (this.speed-dy) + ", nextY=" + dy);
         }
         //System.out.println("==================================================");
@@ -65,10 +66,10 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     int updateNumOccur(int current_num_occur, char current_char) {
-        System.out.println("==============================    CHAR: " + current_char + ", NUM_OCC: " + current_num_occur);
+        //System.out.println("============================    CHAR: " + current_char + ", NUM_OCC: " + current_num_occur);
         if(current_char == OBSTACLE_CHAR){
             ++current_num_occur;
-            System.out.println("==============================   NUM_OCC: " + current_num_occur);
+            //System.out.println("==============================   NUM_OCC: " + current_num_occur);
             return current_num_occur; // ++current_num_occur;
         } 
         return current_num_occur;
@@ -76,7 +77,7 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     boolean outOfBounds(int currX, int currY) {
-        if(currX >= boardWidth /*|| currY >= boardHeight*/) return true;
+        if(currX >= boardWidth || currX < 0/*|| currY >= boardHeight*/) return true;
         return false;
     }
 

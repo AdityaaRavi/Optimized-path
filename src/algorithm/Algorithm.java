@@ -38,13 +38,13 @@ public abstract class Algorithm {
         if(reachedEnd(currX, currY)){
             updateIfBetterPathFound(current_num_occur, curr_path);
            // System.out.println(PATH_FOUND);
-           // System.out.println("=============================================================");
+            System.out.println("=============================================================");
             return PATH_FOUND;
         }
         //Base case 2
         if(isBranchDead(current_num_occur)){
-           // System.out.println(DEAD_PATH);
-           // System.out.println("============================================================");
+            // System.out.println(DEAD_PATH);
+            System.out.println("============================================================");
             return DEAD_PATH;
         }
         //Base case 3 ////////////////////////// UPDATE README.md ABOUT THIS!!!!!!!
