@@ -17,7 +17,7 @@ def fill_board(board, w, h):
 def print_board(board=board):
     for row in board:
         print(row)
-
+        
 # testing the fill_board method
 # print("Testing the fill empty char method")
 # fill_board(board, w, h)

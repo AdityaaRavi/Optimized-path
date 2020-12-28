@@ -11,7 +11,7 @@ public abstract class Ingest {
     protected Scanner fileScanner;
 
     public Ingest(){
-        this.fileName = "data/non-human-friendly-1.txt";
+        this.fileName = "data/more-complex.txt";
         fileHandler = new File(fileName);
         try{
             fileScanner = new Scanner(fileHandler);

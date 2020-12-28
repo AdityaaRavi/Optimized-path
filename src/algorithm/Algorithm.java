@@ -49,6 +49,8 @@ public abstract class Algorithm {
         if(isBranchDead(current_num_occur)) return DEAD_PATH;
         //Base case 3 
         if(best_num_occur == 0) return PATH_FOUND;
+        //Base case 4 -- making sure you don't repeat a node.
+        
         
         
         /////////////////////////////////////////////////main case
