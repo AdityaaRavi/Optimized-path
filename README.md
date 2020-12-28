@@ -15,13 +15,14 @@ I am inital going to work on an algorithm that minimizes the number of collision
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm. (DONE!)
 
-- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm. (DONE!) (But more can be done to improve efficieny)
+- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm. (DONE!) (But more can be done to improve efficiency)
 
 - __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a different text file in a way us puny humans will be able to easily understand. (DONE!)
 
-- __Part 5:__ Once all that is done, update `README.md` to reflect what classes do what and provide all the information a random fellow Computer Scienist will need to use my program as an API for whatever they do.
+- __Part 5:__ Think about different ways this algorithm can be made more efficient. I do have a few ways in mind for the same, so I might just spend the rest of my winter break on this... lets see. I would imagine it would take a lot less coding and a lot more thinking; now that I have all other parts of the code done.
 
-- __Part 6:__ If time permits (looking at what task I took, I probably won't), create a GUI using JavaFX or something modern to make it easier to use my program.
+- __Part 6:__ Once all that is done, update `README.md` to reflect what classes do what and provide all the information a random fellow Computer Scienist will need to use my program as an API for whatever they do.
+
 
 ## The actual algorithm ##
 

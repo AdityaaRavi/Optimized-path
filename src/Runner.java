@@ -11,7 +11,7 @@ public class Runner{
     public static void main(String[] args){
         // get the board as a char[][] using the ingest class.
         char[][] board;
-        String outputPath = "data/more-complex-output.txt";
+        String outputPath = "data/bit-more-complex-output1.txt";
         // use try/catch to use the file name given as a parameter or call the default constructor for the ingest class.
         try{
             board = (new IngestForest(args[0])).getBoard();
@@ -21,7 +21,7 @@ public class Runner{
         }
         
         // Creating an object of the algorithm class
-        Algorithm forest = new ForestAlgorithm(board, 0, 0, 3);
+        Algorithm forest = new ForestAlgorithm(board, 0, 0, 7);
         
         //run the algorithm
         forest.calculate(forest.getStartX(), forest.getStartY(), 0, new ArrayList<Integer[]>());
