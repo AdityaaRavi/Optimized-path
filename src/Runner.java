@@ -21,7 +21,7 @@ public class Runner{
         }
         
         // Creating an object of the algorithm class
-        Algorithm forest = new ForestAlgorithm(board, 0, 0, 5);
+        Algorithm forest = new ForestAlgorithm(board, 0, 0, 3);
         
         //run the algorithm
         forest.calculate(forest.getStartX(), forest.getStartY(), 0, new ArrayList<Integer[]>());
