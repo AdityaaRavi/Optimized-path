@@ -21,8 +21,8 @@ public class ForestAlgorithm extends Algorithm {
             calcRan = false;
             //System.out.println("Speed set to: " + speed);
             this.speed = speed;
-            System.out.println(speed);
-            return (this.speed = speed);
+            System.out.println("Speed: " + speed);
+            return speed;
         }
         else throw new IllegalArgumentException("Speed must be at least 2."); 
     }
@@ -30,10 +30,12 @@ public class ForestAlgorithm extends Algorithm {
     @Override
     ArrayList<Integer[]> getPossibleMovements() {
         ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
-        setSpeed(5);
+
+        setSpeed(3);
+        
         for(int dy = 1; dy < this.speed; dy++){
             movements.add(new Integer[]{this.speed - dy, dy});
-            movements.add(new Integer[]{-(this.speed - dy), dy});
+            //movements.add(new Integer[]{-(this.speed - dy), dy});
             //System.out.println("NextX=" + (this.speed-dy) + ", nextY=" + dy);
         }
         //System.out.println("==================================================");

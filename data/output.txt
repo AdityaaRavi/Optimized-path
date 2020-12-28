@@ -7,21 +7,18 @@ Legend:
 
 In the best path found:
 
-Number of places visited: 22
+Number of places visited: 7
 Number of obstacles encountered: 0
 
 Coordinates visited: 
- (x=0, y=0) (x=4, y=1) (x=0, y=2) (x=4, y=3) (x=0, y=4)
- (x=4, y=5) (x=1, y=5) (x=3, y=4) (x=2, y=5) (x=1, y=3)
- (x=5, y=4) (x=1, y=5) (x=4, y=5) (x=2, y=4) (x=5, y=5)
- (x=3, y=5) (x=3, y=2) (x=0, y=4) (x=5, y=5) (x=1, y=5)
- (x=2, y=3) (x=5, y=5)
+ (x=0, y=0) (x=2, y=1) (x=4, y=2) (x=5, y=4) (x=3, y=3)
+ (x=5, y=4) (x=4, y=5)
 
 The whole board:
 
 V = # # # = 
-# # = # B = 
-B = = B # # 
-= B V = V = 
-V # B V # V 
-# V V V V V 
+# # V # # = 
+# = = # B # 
+= # = V = = 
+# # # = # V 
+# # = = V = 

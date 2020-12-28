@@ -30,7 +30,7 @@ public class Runner{
         //ArrayList<Integer[]> result = forest.getBestPath();
         
         //Create a new Show class object that prints out the path as both the (dx, dy) and on the map as well.
-        (new ForestShow(outputPath)).formatAndPrint(forest, false);
+        (new ForestShow(outputPath)).formatAndPrint(forest, true);
 
 
 

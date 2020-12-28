@@ -9,6 +9,7 @@ public abstract class Algorithm {
     private int startY;
     protected boolean calcRan;
     
+    
     ////////////////////////////////////////////////////////// data of best path
     private int best_num_occur = Integer.MAX_VALUE;
     private ArrayList<Integer[]> best_path = new ArrayList<Integer[]>();
@@ -38,25 +39,27 @@ public abstract class Algorithm {
         if(reachedEnd(currX, currY)){
             updateIfBetterPathFound(current_num_occur, curr_path);
            // System.out.println(PATH_FOUND);
-            System.out.println("=============================================================");
+            System.out.println("Reached end");
             return PATH_FOUND;
         }
         //Base case 2
         if(isBranchDead(current_num_occur)){
             // System.out.println(DEAD_PATH);
-            System.out.println("============================================================");
+            System.out.println("Dead branch");
             return DEAD_PATH;
         }
         //Base case 3 ////////////////////////// UPDATE README.md ABOUT THIS!!!!!!!
         if(best_num_occur == 0) return PATH_FOUND;
         
+        
         //main case
         curr_path.add(new Integer[]{currX, currY});
         for(Integer[] pos : possibleMovements){
+            int toPassNumOccur = updateNumOccur(current_num_occur, board[currY][currX]);
             int nextX = currX + pos[0];
             int nextY = currY + pos[1];
             if(!outOfBounds(nextX, nextY)){
-                calculate(nextX, nextY, updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
+                calculate(nextX, nextY, toPassNumOccur, curr_path);
                 //System.out.println("NextX=" + nextX + ", nextY=" + nextY + ", curr num occur: " + current_num_occur + 
                   //  ", Best num occur: " + best_num_occur);
             }
