@@ -48,7 +48,7 @@ public abstract class Algorithm {
         }
         //Base case 2
         if(isBranchDead(current_num_occur)){
-            
+
             // System.out.println(DEAD_PATH);
             //System.out.println("Dead branch");
             return DEAD_PATH;
@@ -64,7 +64,7 @@ public abstract class Algorithm {
             int nextX = currX + pos[0];
             int nextY = currY + pos[1];
             if(!outOfBounds(nextX, nextY)){
-                calculate(nextX, nextY, toPassNumOccur, curr_path);
+                calculate(nextX, nextY, toPassNumOccur, (ArrayList<Integer[]>)curr_path.clone());
                 //System.out.println("NextX=" + nextX + ", nextY=" + nextY + ", curr num occur: " + current_num_occur + 
                   //  ", Best num occur: " + best_num_occur);
             }
