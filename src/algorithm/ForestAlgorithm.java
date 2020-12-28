@@ -20,6 +20,8 @@ public class ForestAlgorithm extends Algorithm {
         if(speed > 1){
             calcRan = false;
             //System.out.println("Speed set to: " + speed);
+            this.speed = speed;
+            System.out.println(speed);
             return (this.speed = speed);
         }
         else throw new IllegalArgumentException("Speed must be at least 2."); 
@@ -40,13 +42,13 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     boolean reachedEnd(int currX, int currY) {
-        System.out.printf("============ Y: %d, HEIGHT: %d\n", currY, boardHeight);
+        //System.out.printf("============ Y: %d, HEIGHT: %d\n", currY, boardHeight);
         return currY >= boardHeight;
     }
 
     @Override
     boolean isBranchDead(int current_num_occur) {
-        System.out.printf("============ CURR: %d, BEST: %d\n", current_num_occur, getBestNumOccur());
+       // System.out.printf("============ CURR: %d, BEST: %d\n", current_num_occur, getBestNumOccur());
         return current_num_occur > getBestNumOccur();
     }
 
@@ -63,7 +65,12 @@ public class ForestAlgorithm extends Algorithm {
 
     @Override
     int updateNumOccur(int current_num_occur, char current_char) {
-        if(current_char == OBSTACLE_CHAR) return ++current_num_occur;
+        System.out.println("==============================    CHAR: " + current_char + ", NUM_OCC: " + current_num_occur);
+        if(current_char == OBSTACLE_CHAR){
+            ++current_num_occur;
+            System.out.println("==============================   NUM_OCC: " + current_num_occur);
+            return current_num_occur; // ++current_num_occur;
+        } 
         return current_num_occur;
     }
 

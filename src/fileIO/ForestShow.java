@@ -28,17 +28,17 @@ public class ForestShow extends Show {
         
         /////////////////////////// steping through each of the coordinates thus found and marking it up on a copy of the board.
         //for(Integer[] e : coordinates) board[e[1]][e[0]] = 'V';
-        for(Integer[] e : a.getBestPathCopy()) board[e[1]][e[0]] = 'V';
+        for(Integer[] e : a.getBestPathCopy()) board[e[1]][e[0]] = board[e[1]][e[0]] == '#' ? 'B' : 'V';
         //////////////////////////////////////////////////////////////// printing out some useful data
-        printme += "Legend:\n\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n\n";
+        printme += "Legend:\n\n'V' = Visited empty space\n'B' = Visited obstacle\n'#' = obstacle, but not visited\n'=' = empty space not visited\n\n";
         printme += "In the best path found:\n\n"
             + "Number of places visited: " + a.getBestPathCopy().size() + "\n";
         printme += "Number of obstacles encountered: " + a.getBestNumOccur();
         
         //////////////////////////////////////////////////////// printing out the actual number of all the coordinates visited.
-        printme += "\nCoordinates visited: ";
+        printme += "\n\nCoordinates visited: ";
         int i = 0;
-        for(Integer[] e : a.getBestPathCopy()) printme += " (x=" + e[0] + ", y=" + e[1] + ")" + (i++ % 5 == 0 ? "\n" : "");
+        for(Integer[] e : a.getBestPathCopy()) printme += (i++ % 5 == 0 ? "\n" : "") + " (x=" + e[0] + ", y=" + e[1] + ")";
         
         /////////////////////////////////////////////////////////printing out the whole board
         printme += "\n\nThe whole board:\n\n";
