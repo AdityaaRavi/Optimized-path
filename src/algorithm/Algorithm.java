@@ -37,22 +37,29 @@ public abstract class Algorithm {
         this.calcRan = true;
         if(reachedEnd(currX, currY)){
             updateIfBetterPathFound(current_num_occur, curr_path);
+            System.out.println(PATH_FOUND);
             return PATH_FOUND;
         }
         //Base case 2
         if(isBranchDead(current_num_occur)){
+            System.out.println(DEAD_PATH);
             return DEAD_PATH;
         }
+        //Base case 3
+        if(best_num_occur == 0) return PATH_FOUND;
         
         //main case
+        curr_path.add(new Integer[]{currX, currY});
         for(Integer[] pos : possibleMovements){
             int nextX = currX + pos[0];
             int nextY = currY + pos[1];
-            System.out.println("NextX=" + nextX + ", nextY=" + nextY);
-            if(!outOfBounds(nextX, nextY))
+            if(!outOfBounds(nextX, nextY)){
                 calculate(nextX, nextY, updateNumOccur(current_num_occur, board[currY][currX]), curr_path);
+                System.out.println("NextX=" + nextX + ", nextY=" + nextY + ", curr num occur: " + current_num_occur + 
+                    ", Best num occur: " + best_num_occur);
+            }
         }
-
+        //System.out.println("==================================================");
         return PATH_FOUND;
     }
 

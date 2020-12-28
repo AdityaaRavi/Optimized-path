@@ -28,11 +28,12 @@ public class ForestAlgorithm extends Algorithm {
     @Override
     ArrayList<Integer[]> getPossibleMovements() {
         ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
-        System.out.println("Speed:" + speed);
-        for(int dy = 1; dy <= this.speed; dy++){
+        setSpeed(5);
+        for(int dy = 1; dy < this.speed; dy++){
             movements.add(new Integer[]{this.speed - dy, dy});
-            System.out.println("NextX=" + (this.speed-dy) + ", nextY=" + dy);
+            //System.out.println("NextX=" + (this.speed-dy) + ", nextY=" + dy);
         }
+        //System.out.println("==================================================");
         //for(Integer[] w : movements) System.out.println("movement: X=" + w[0] + ", nextY=" + w[1]); 
         return movements;
     }

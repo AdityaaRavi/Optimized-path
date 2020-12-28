@@ -2,8 +2,6 @@ package fileIO;
 
 import java.util.ArrayList;
 
-import javax.swing.plaf.synth.SynthStyle;
-
 import algorithm.Algorithm;
 
 public class ForestShow extends Show {
