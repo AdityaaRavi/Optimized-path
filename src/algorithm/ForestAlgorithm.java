@@ -29,15 +29,15 @@ public class ForestAlgorithm extends Algorithm {
     ArrayList<Integer[]> getPossibleMovements() {
         ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
         
-        // for(int dy = 1; dy < this.speed; dy++){
-        //     movements.add(new Integer[]{this.speed - dy, dy});
-        //     movements.add(new Integer[]{-(this.speed - dy), dy});
-        //     System.out.println("PosX (+) =" + (this.speed-dy) + ", posY=" + dy);
-        //     System.out.println("PosX (-) =" + -(this.speed-dy) + ", posY=" + dy);
-        // }
-        movements.add(new Integer[]{ -1, 1});
-        //movements.add(new Integer[]{ 0, 1});
-        movements.add(new Integer[]{ 1, 1});
+        for(int dy = 1; dy < this.speed; dy++){
+            movements.add(new Integer[]{this.speed - dy, dy});
+            movements.add(new Integer[]{-(this.speed - dy), dy});
+            //System.out.println("PosX (+) =" + (this.speed-dy) + ", posY=" + dy);
+            //System.out.println("PosX (-) =" + -(this.speed-dy) + ", posY=" + dy);
+        }
+        // movements.add(new Integer[]{ -1, 1});
+        // //movements.add(new Integer[]{ 0, 1});
+        // movements.add(new Integer[]{ 1, 1});
         //System.out.println("==================================================");
         for(Integer[] w : movements) System.out.println("possible movements: dx=" + w[0] + ", dy=" + w[1]); 
         return movements;
