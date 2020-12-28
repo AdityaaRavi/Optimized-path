@@ -29,7 +29,7 @@ I am inital going to work on an algorithm that minimizes the number of collision
 
 - The algorithm is actually quite simple -- the whole algorithm is going to be in a single recursive method. Inside that method, we are going to have three base cases (see the section below) and a for loop that makes a recursive call -- one for every possible movement within the `board` (see its respective section). 
 - The `Algorithm` class will have a parameter to keep track of the number of occurances (`num_occur`) of the variable to optimize (see base case no. 2) and a parameter (`curr_path`) that keeps track of the path taken in your current branch. 
-- The class will also be two other parameters variables: `best_num_occur`, which stores the `num_occur` of the most optimized path found yet and the `best_path` which is a ` ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `x` and `y` positions of each cell visited in the best path. (see the section about sign convention for more info).
+- The class will also be two other parameters variables: `best_num_occur`, which stores the `num_occur` of the most optimized path found yet and the `best_path` which is a ` ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `x` and `y` positions of each cell visited in the best path. (see the section about variable references for more info).
 - The method will also return different things based on if it had found a new and better path, or if it had terminated in the middle after having found that the current branch is a dead branch (see base case no. 2 and the return values section). 
 
 ___Base cases:___
@@ -40,7 +40,7 @@ ___Base cases:___
 
 ___Possible movements in the `board`:___
 
-There will be an abstract method in the algorithm class whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can make. This method will be called once in the constructor of the `Algorithm` class' subclass and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter.
+There will be an abstract method in the algorithm class whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can make (see section about sign convention for more info). This method will be called once in the constructor of the `Algorithm` class' subclass and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter.
 
 ___Possible Return values of the function:___
 
