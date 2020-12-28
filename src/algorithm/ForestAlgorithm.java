@@ -14,15 +14,13 @@ public class ForestAlgorithm extends Algorithm {
         this.boardHeight = board.length;
         this.boardWidth = board[0].length;
         setSpeed(speed);
+        super.setPossibleMovements(getPossibleMovements());
     }
 
     public int setSpeed(int speed){
         if(speed > 1){
             calcRan = false;
-            //System.out.println("Speed set to: " + speed);
-            this.speed = speed;
-            System.out.println("Speed: " + speed);
-            return speed;
+            return this.speed = speed;
         }
         else throw new IllegalArgumentException("Speed must be at least 2."); 
     }
@@ -31,7 +29,7 @@ public class ForestAlgorithm extends Algorithm {
     ArrayList<Integer[]> getPossibleMovements() {
         ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
 
-        setSpeed(3);
+        //setSpeed(3);
         
         for(int dy = 1; dy < this.speed; dy++){
             movements.add(new Integer[]{this.speed - dy, dy});
@@ -58,8 +56,8 @@ public class ForestAlgorithm extends Algorithm {
     @Override
     boolean updateIfBetterPathFound(int current_num_occur, ArrayList<Integer[]> curr_path) {
         if(getBestPathCopy().size() == 0 || current_num_occur < getBestNumOccur()){
-            setBestPath(curr_path);
-            setBestNumOccur(current_num_occur);
+            super.setBestPath(curr_path);
+            super.setBestNumOccur(current_num_occur);
             return true;
         }
 

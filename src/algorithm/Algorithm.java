@@ -17,7 +17,7 @@ public abstract class Algorithm {
     private final int DEAD_PATH = -1;
     private final int PATH_FOUND = 1;
     ///////////////////////////////////////////////possible movements that can be enacted in each iteration.
-    ArrayList<Integer[]> possibleMovements = getPossibleMovements();
+    ArrayList<Integer[]> possibleMovements;
 
     /////////////////constructor
     public Algorithm(char[][] board, int startX, int startY){
@@ -25,6 +25,9 @@ public abstract class Algorithm {
         this.startX = startX;
         this.startY = startY;
         this.calcRan = false;
+    }
+    protected void setPossibleMovements(ArrayList<Integer[]> poss){
+        possibleMovements = poss;
     }
     /**
      *  The actual recursive method that carries out all the iterations.
