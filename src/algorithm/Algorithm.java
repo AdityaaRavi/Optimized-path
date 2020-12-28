@@ -42,13 +42,13 @@ public abstract class Algorithm {
         if(reachedEnd(currX, currY)){
             updateIfBetterPathFound(current_num_occur, curr_path);
            // System.out.println(PATH_FOUND);
-            System.out.println("Reached end");
+            //System.out.println("Reached end");
             return PATH_FOUND;
         }
         //Base case 2
         if(isBranchDead(current_num_occur)){
             // System.out.println(DEAD_PATH);
-            System.out.println("Dead branch");
+            //System.out.println("Dead branch");
             return DEAD_PATH;
         }
         //Base case 3 ////////////////////////// UPDATE README.md ABOUT THIS!!!!!!!
@@ -114,7 +114,7 @@ public abstract class Algorithm {
      * @return null if calcute() was never called, copy of ArrayList<Integer[]> best_path if it was run.
      */
     public ArrayList<Integer[]> getBestPathCopy(){
-        if(calcRan) return best_path;
+        if(calcRan) return (ArrayList<Integer[]>) best_path.clone();
         else return null;
     }
 

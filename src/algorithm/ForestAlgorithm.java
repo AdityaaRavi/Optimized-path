@@ -14,7 +14,7 @@ public class ForestAlgorithm extends Algorithm {
         this.boardHeight = board.length;
         this.boardWidth = board[0].length;
         setSpeed(speed);
-        super.setPossibleMovements(getPossibleMovements());
+        super.setPossibleMovements(this.getPossibleMovements());
     }
 
     public int setSpeed(int speed){
@@ -28,13 +28,12 @@ public class ForestAlgorithm extends Algorithm {
     @Override
     ArrayList<Integer[]> getPossibleMovements() {
         ArrayList<Integer[]> movements = new ArrayList<Integer[]>();
-
-        //setSpeed(3);
         
         for(int dy = 1; dy < this.speed; dy++){
             movements.add(new Integer[]{this.speed - dy, dy});
-            //movements.add(new Integer[]{-(this.speed - dy), dy});
-            //System.out.println("NextX=" + (this.speed-dy) + ", nextY=" + dy);
+            movements.add(new Integer[]{-(this.speed - dy), dy});
+            System.out.println("PosX (+) =" + (this.speed-dy) + ", posY=" + dy);
+            System.out.println("PosX (-) =" + -(this.speed-dy) + ", posY=" + dy);
         }
         //System.out.println("==================================================");
         //for(Integer[] w : movements) System.out.println("movement: X=" + w[0] + ", nextY=" + w[1]); 
