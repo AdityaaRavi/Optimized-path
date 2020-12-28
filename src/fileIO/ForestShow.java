@@ -32,8 +32,8 @@ public class ForestShow extends Show {
         for(Integer[] e : coordinates) board[e[1]][e[0]] = 'V';
         
         // printing out some useful data
-        printme += "Legend:\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n\n";
-        printme += "In the best path found:\n"
+        printme += "Legend:\n\n'V' = Visited\n'#' = obstacle\n'=' = empty space\n\n";
+        printme += "In the best path found:\n\n"
             + "Number of places visited: " + coordinates.size() + "\n";
         printme += "Number of obstacles encountered: " + a.getBestNumOccur();
         

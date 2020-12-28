@@ -10,9 +10,9 @@ Coordinates visited:  (x=0, y=0)
 
 The whole board:
 
-[C@53d8d10a
-[C@e9e54c2
-[C@65ab7765
-[C@1b28cdfa
-[C@eed1f14
-[C@7229724f
+V = # # # = 
+# # = # # = 
+# = = # # # 
+= # = = = = 
+# # # = # = 
+# # = = = = 

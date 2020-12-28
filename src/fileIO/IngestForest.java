@@ -20,7 +20,7 @@ public class IngestForest extends Ingest{
         Scanner line1 = new Scanner(fileScanner.nextLine()).useDelimiter(":");
         line1.close();
         Scanner line2 = new Scanner(fileScanner.nextLine()).useDelimiter(":");
-        System.out.println(line2.next());
+        //System.out.println(line2.next());
         String l2s = line2.next();
         line2.close();
         line2 = new Scanner(l2s);
