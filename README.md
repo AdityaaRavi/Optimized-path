@@ -1,5 +1,5 @@
 # Optimized-path
-In this repo, I try to create an algorithm that finds a path that minimizes/maximizes the given parameter, starting with collisions.
+In this repo, I try to create an algorithm that finds a path that minimizes/maximizes the given parameter, starting with collisions; with a special focus on generality.
 
 # A bit more detailed description of what I want to do here: #
 
@@ -25,8 +25,6 @@ There are 6 things to want I want to do here:
 
 
 ## The actual algorithm ##
-
-"Recursion is nice"
 
 - The algorithm is actually quite simple -- the whole algorithm is going to be in a single recursive method. Inside that method, we are going to have 5 base cases (see the section below) and a for loop that makes a recursive call -- one for every possible movement within the `board` (see its respective section). 
 - The `Algorithm<E>` class will have a parameter to keep track of the number of occurances (`num_occur`) of the variable to optimize (see base case no. 2) and a parameter (`curr_path`) that keeps track of the path taken in your current branch. 
