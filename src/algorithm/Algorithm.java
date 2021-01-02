@@ -2,9 +2,9 @@ package algorithm;
 
 import java.util.ArrayList;
 
-public abstract class Algorithm {
+public abstract class Algorithm<E> {
     //class fields
-    private char[][] board;
+    private E[][] board;
     private int startX;
     private int startY;
     protected boolean calcRan;
@@ -20,7 +20,7 @@ public abstract class Algorithm {
     ArrayList<Integer[]> possibleMovements;
 
     /////////////////constructor
-    public Algorithm(char[][] board, int startX, int startY){
+    public Algorithm(E[][] board, int startX, int startY){
         this.board = board;
         this.startX = startX;
         this.startY = startY;
@@ -104,7 +104,7 @@ public abstract class Algorithm {
      * Update num_occur
      * @return returns the updated num_occur value based on the current character.
      */
-    abstract int updateNumOccur(int current_num_occur, char current_char);
+    abstract int updateNumOccur(int current_num_occur, E board2);
     /////////////////////////////////////////////////// getters and setters.
     /**
      * Returns the a copy of the best path.
@@ -159,9 +159,9 @@ public abstract class Algorithm {
 
     /**
      * Returns a copy of the board.
-     * @return char[][] copy of the board.
+     * @return E[][] copy of the board.
      */
-    public char[][] getBoardCopy(){
+    public E[][] getBoardCopy(){
         return board.clone();
     }
 

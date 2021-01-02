@@ -2,14 +2,14 @@ package algorithm;
 
 import java.util.ArrayList;
 
-public class ForestAlgorithm extends Algorithm {
+public class ForestAlgorithm extends Algorithm<Character> {
 
     final char OBSTACLE_CHAR = '#';
     int boardWidth;
     int boardHeight;
     int speed = 5; // The number of boxes that MUST be traversed at anytime.
     
-    public ForestAlgorithm(char[][] board, int startX, int startY, int speed) {
+    public ForestAlgorithm(Character[][] board, int startX, int startY, int speed) {
         super(board, startX, startY);
         this.boardHeight = board.length;
         this.boardWidth = board[0].length;
@@ -59,7 +59,7 @@ public class ForestAlgorithm extends Algorithm {
     }
 
     @Override
-    int updateNumOccur(int current_num_occur, char current_char) {
+    int updateNumOccur(int current_num_occur, Character current_char) {
         if(current_char == OBSTACLE_CHAR) return ++current_num_occur;
         return current_num_occur;
     }

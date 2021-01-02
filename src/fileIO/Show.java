@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 import algorithm.Algorithm;
 
-public abstract class Show {
+public abstract class Show<E> {
     //fields
     private Path fileHandler;
 
@@ -14,7 +14,7 @@ public abstract class Show {
         this.fileHandler = Path.of(fileName);
     }
     
-    abstract int formatAndPrint(Algorithm a, boolean printToStdout);
+    abstract int formatAndPrint(Algorithm<E> a, boolean printToStdout);
 
     public int printToFile(String s){
         try{

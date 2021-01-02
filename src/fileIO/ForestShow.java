@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 import algorithm.Algorithm;
 
-public class ForestShow extends Show {
+public class ForestShow extends Show<Character> {
 
     public ForestShow(String fileName) {
         super(fileName);
     }
 
     @Override
-    public int formatAndPrint(Algorithm a, boolean printToStdout) {
+    public int formatAndPrint(Algorithm<Character> a, boolean printToStdout) {
         String printme = "";
                 
-        char[][] board = a.getBoardCopy();
+        Character[][] board = (Character[][]) (a.getBoardCopy());
         
         /////////////////////////// steping through each of the coordinates thus found and marking it up on a copy of the board.
 

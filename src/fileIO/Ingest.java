@@ -4,14 +4,14 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public abstract class Ingest {
+public abstract class Ingest<E> {
     //fields
     protected String fileName;
     protected File fileHandler;
     protected Scanner fileScanner;
 
     public Ingest(){
-        this.fileName = "data/more-complex.txt";
+        this.fileName = "data/non-human-friendly-1.txt";
         fileHandler = new File(fileName);
         try{
             fileScanner = new Scanner(fileHandler);
@@ -32,5 +32,5 @@ public abstract class Ingest {
         }
     }
 
-    public abstract char[][] getBoard();
+    public abstract E[][] getBoard();
 }

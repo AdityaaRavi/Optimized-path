@@ -15,7 +15,7 @@ There are 6 things to want I want to do here:
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm. (DONE!)
 
-- __Part 3:__ Creating the class (`Algorithm`) that carries out the actual algorithm. (DONE!) (But more can be done to improve efficiency)
+- __Part 3:__ Creating the class (`Algorithm<E>`) that carries out the actual algorithm. (DONE!) (But more can be done to improve efficiency)
 
 - __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a different text file in a way us puny humans will be able to easily understand. (DONE!)
 
@@ -29,7 +29,7 @@ There are 6 things to want I want to do here:
 "Recursion is nice"
 
 - The algorithm is actually quite simple -- the whole algorithm is going to be in a single recursive method. Inside that method, we are going to have 5 base cases (see the section below) and a for loop that makes a recursive call -- one for every possible movement within the `board` (see its respective section). 
-- The `Algorithm` class will have a parameter to keep track of the number of occurances (`num_occur`) of the variable to optimize (see base case no. 2) and a parameter (`curr_path`) that keeps track of the path taken in your current branch. 
+- The `Algorithm<E>` class will have a parameter to keep track of the number of occurances (`num_occur`) of the variable to optimize (see base case no. 2) and a parameter (`curr_path`) that keeps track of the path taken in your current branch. 
 - The class will also be two other parameters variables: `best_num_occur`, which stores the `num_occur` of the most optimized path found yet and the `best_path` which is a ` ArrayList<Integer[3]>` with each of the `Integer[3]` containing the `x` and `y` positions of each cell visited in the best path, along with the `num_occur` of that recursive call. (see the section about variable references for more info).
 - The method will also return different things based on if it had found a new and better path, or if it had terminated in the middle after having found that the current branch is a dead branch (see base case no. 2 and the return values section). 
 
@@ -45,7 +45,7 @@ ___Dependencies for this to work:___ Keep track of `num_occur` of each recursive
 
 ___Possible movements in the `board`:___
 
-There will be an abstract method in the algorithm class whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can make (see section about sign convention for more info). This method will be called once in the constructor of the `Algorithm` class' subclass and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter.
+There will be an abstract method in the algorithm class whose job it is to return an `ArrayList<Integer[2]>` with each of the `Integer[2]` containing the `dx` and `dy` values of one of the possible movements that the algorithm can make (see section about sign convention for more info). This method will be called once in the constructor of the `Algorithm<E>` class' subclass and the possible movements will be stored as a parameter. The recursive method will use a for-each loop where a recursive call is made for each of the possible positions from the said parameter.
 
 ___Possible Return values of the function:___
 
@@ -71,7 +71,8 @@ __Done:__
 - Runner class with the `main()` method that calls each of these individual methods for the `Forest` example done.
 - Code needed to ingest information from the file used to store the said randomly generated `board` done.
 - Algorithm class overall structure done
-- The first three base cases have been implemented in the Algorithm class.
+- `Algorithm<E>`, `ingest<E>` and `Show<E>` classes converted to use generics instead of a specific type for storing the board.
+- The first three base cases have been implemented in the `Algorithm<E>` class.
 - Code needed to take the result from the algorithm and show it in a readable way completed.
 - The `Forest` example on how to use this as an API fully done.
 
