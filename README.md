@@ -1,23 +1,23 @@
 # Optimized-path
-In this repo, I try to create an algorithm that finds a path that minimizes/maximizes the given parameter, starting with collisions; with a special focus on generality.
+In this repo, I try to create a program that finds a path which minimizes/maximizes the given parameter, starting with collisions; with a special focus on generality.
 
 # A bit more detailed description of what I want to do here: #
 
 I want to create a java program/API that takes in input from a text file about a `board` that can represent a maze/forest/what not; a starting position (`sx`,`sy`); and a parameter to minimize/maximize [I will refer to it as "optimize" from here on] (for example the number of collisions with a given object).
 
-I am inital going to work on an algorithm that minimizes the number of collisions with a `tree` - represented by the character "#" in the `board`, but while I am at it, use OOP concepts to make changing the path finding algorithm, or the goal of the path finding algorithm, or really anything relvant as simple as creating a subclass and overloading a method.
+As an example, I including an algorithm that minimizes the number of collisions with a `tree` - represented by the character "#" in the `board`, that uses and builds on the API to show how easy it is to make changing the path finding algorithm, or the goal of the path finding algorithm, or really anything to specialize your specific program as simple as creating a subclass and overloading a method.
 
 # The entire program explained #
 There are 6 things to want I want to do here:
 
 - __Part 1: Getting the board ready:__
-  To be able to test the algorithm I end up making, I need to have sample inputs first. And since I am not a masochist, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic. (DONE!)
+  To be able to test the algorithm I end up making, I need to have sample inputs first. To that end, I am going to make a python program that will take in the characters to use as `trees` and the size of the board, and use that information to create a `board` on which the the path finding algorithm will do its magic. (DONE!)
  
 - __Part 2:__ Creating a class that can ingest information from the board and return it to `main()` in the format needed to make my life easy when I code the actual algorithm. (DONE!)
 
-- __Part 3:__ Creating the class (`Algorithm<E>`) that carries out the actual algorithm. (DONE!) (But more can be done to improve efficiency)
+- __Part 3:__ Creating the class (`Algorithm<E>`) that carries out the actual algorithm. (DONE!) (But more must be done to improve efficiency)
 
-- __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a different text file in a way us puny humans will be able to easily understand. (DONE!)
+- __Part 4:__ Create a class that takes the output of the actual algorithm and writes it on a text file to make it easy to visualize the results. (DONE!)
 
 - __Part 5:__ Think about different ways this algorithm can be made more efficient. I do have a few ways in mind for the same, so I might just spend the rest of my winter break on this... lets see. I would imagine it would take a lot less coding and a lot more thinking; now that I have all other parts of the code done.
 
@@ -61,6 +61,10 @@ ___Sign convention used:___
 - Towards the roof = `-dy`
 - Towards Left = `-dx`
 - Towards right = `+dx`
+
+# Example Output #
+This is the output for the example described in the introduction.
+![image](https://user-images.githubusercontent.com/43429374/112085514-e7090900-8b47-11eb-92ef-93b3b4a86d89.png)
 
 # Current progress: #
 
