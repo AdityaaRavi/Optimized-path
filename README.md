@@ -1,5 +1,5 @@
 # Optimized-path
-In this repo, I try to create a program that finds a path which minimizes/maximizes the given parameter, starting with collisions; with a special focus on generality.
+In this repo, I try to create a program that finds a path which minimizes/maximizes the given parameter, starting with collisions; with a special focus on emphasizing OOP principles.
 
 # A bit more detailed description of what I want to do here: #
 
