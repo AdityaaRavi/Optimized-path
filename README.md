@@ -1,5 +1,5 @@
 # Optimized-path
-In this repo, I try to create a program that finds a path which minimizes/maximizes the given parameter, starting with collisions; with a special focus on emphasizing OOP principles.
+An API to find a path which minimizes/maximizes the given parameter with a special focus on emphasizing OOP principles. This includes an example program that minimizes the number of collisions in an obstacle course using this API.
 
 # A bit more detailed description of what I want to do here: #
 
