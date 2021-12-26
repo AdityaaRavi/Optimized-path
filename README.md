@@ -1,9 +1,9 @@
 # Optimized-path
-An API to find a path which minimizes/maximizes the given parameter with a special focus on emphasizing OOP principles. This includes an example program that minimizes the number of collisions in an obstacle course using this API.
+A SDK to find a path which minimizes/maximizes the given parameter with a special focus on emphasizing OOP principles. This includes an example program that minimizes the number of collisions in an obstacle course using this SDK.
 
 # A bit more detailed description of what I want to do here: #
 
-I want to create a java program/API that takes in input from a text file about a `board` that can represent a maze/forest/what not; a starting position (`sx`,`sy`); and a parameter to minimize/maximize [I will refer to it as "optimize" from here on] (for example the number of collisions with a given object).
+I want to create a java program/SDK that takes in input from a text file about a `board` that can represent a maze/forest/what not; a starting position (`sx`,`sy`); and a parameter to minimize/maximize [I will refer to it as "optimize" from here on] (for example the number of collisions with a given object).
 
 As an example, I including an algorithm that minimizes the number of collisions with a `tree` - represented by the character "#" in the `board`, that uses and builds on the API to show how easy it is to make changing the path finding algorithm, or the goal of the path finding algorithm, or really anything to specialize your specific program as simple as creating a subclass and overloading a method.
 
@@ -76,7 +76,7 @@ __Done:__
 - `Algorithm<E>`, `ingest<E>` and `Show<E>` classes converted to use generics instead of a specific type for storing the board.
 - The first three base cases have been implemented in the `Algorithm<E>` class.
 - Code needed to take the result from the algorithm and show it in a readable way completed.
-- The `Forest` example on how to use this as an API fully done.
+- The `Forest` example on how to use this as an SDK fully done.
 
 __TO DO:__
 - Implement the remaing two base cases that are currently planned.
